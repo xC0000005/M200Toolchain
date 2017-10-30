@@ -77,11 +77,49 @@
 
 #define LED_BUILTIN PC13
 
+#ifdef ENUM_PINS
 // Note this needs to match with the PIN_MAP array in board.cpp
 enum {
     PA0, PA1, PA2, PA3, PA4, PA5, PA6, PA7, PA8, PA9, PA10, PA11, PA12, PA13,PA14,PA15,
 	PB0, PB1, PB2, PB3, PB4, PB5, PB6, PB7, PB8, PB9, PB10, PB11, PB12, PB13,PB14,PB15,
 	PC13, PC14,PC15
 };
+#else
+#define PA0   0
+#define PA1   1
+#define PA2   2
+#define PA3   3
+#define PA4   4
+#define PA5   5
+#define PA6   6
+#define PA7   7
+#define PA8   8
+#define PA9   9
+#define PA10 10
+#define PA11 11
+#define PA12 12
+#define PA13 13
+#define PA14 14
+#define PA15 15
+#define PB0  16
+#define PB1  17
+#define PB2  18
+#define PB3  19
+#define PB4  20
+#define PB5  21
+#define PB6  22
+#define PB7  23
+#define PB8  24
+#define PB9  25
+#define PB10 26
+#define PB11 27
+#define PB12 28
+#define PB13 29
+#define PB14 30
+#define PB15 31
+#define PC13 32
+#define PC14 33
+#define PC15 34
+#endif
 
 #endif
