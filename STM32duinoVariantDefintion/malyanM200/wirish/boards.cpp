@@ -73,6 +73,9 @@ void init(void) {
     wirish::priv::board_setup_usb();
     wirish::priv::series_init();
     boardInit();
+
+    // Now that board init is done, re-enable interrupts.
+    nvic_globalirq_enable();
 }
 
 /* Provide a default no-op boardInit(). */

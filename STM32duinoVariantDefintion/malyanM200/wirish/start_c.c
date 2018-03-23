@@ -61,6 +61,10 @@ struct rom_img_cfg {
 extern char _lm_rom_img_cfgp;
 
 void __attribute__((noreturn)) start_c(void) {
+    // On M200 derived boards, there's interrupt functions running from the
+    // bootloader. Once init is done, these are gone, so disable interrupts
+    // until then.
+    asm volatile("cpsid i");
     struct rom_img_cfg *img_cfg = (struct rom_img_cfg*)&_lm_rom_img_cfgp;
     int *src = img_cfg->img_start;
     int *dst = (int*)&__data_start__;
